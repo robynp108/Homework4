@@ -7,35 +7,51 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
-    <section id="start">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                 <a href="./highscore.html">View Highscores</a>
                 </div>
                 <div class="col-md-6">
-                <span style="float: right;">Timer</span>
+                <span id="timer" style="float: right;">Timer</span>
                 </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row" id="start">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
                         <h5 class="card-title">Welcome to Coding Quiz</h5>
                         <p class="card-text">Test your coding knowledge! 
-                            Sixty seconds to finish, time deducted for incorrect answers.  
+                            Ten seconds to finish, time deducted for incorrect answers.  
                             Stores your score to share with friends!</p>
-                        <a href="#" class="btn btn-primary">Start</a>
+                        <button type="button" id="start" class="btn btn-primary">Start</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="question1"></section>
-    <section id="question2"></section>    
-    <section id="question3"></section>
+    <br>
+    <section id="questionCard" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card w-50 ">
+                        <div class="card-body d-flex flex-column">
+                        <h5 class="card-title" id="questions">Question from array?</h5>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                        <button type="button" id="answer1" class="btn btn-primary m-2">1. answer</button>
+                        <button type="button" id="answer2" class="btn btn-primary m-2">2. answer</button>
+                        <button type="button" id="answer3" class="btn btn-primary m-2">3. answer</button>
+                        <button type="button" id="answer4" class="btn btn-primary m-2">4. answer</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>    
+    </section>
     <section id="finish"></section> 
 
     <script src="./game.js"></script>
