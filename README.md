@@ -27,7 +27,7 @@ THEN a timer starts and I am presented with a question
 WHEN I answer a question
 THEN I am presented with another question
 * a question array of objects
-* each item in array has oject pairs for title, choices, correct answer
+* each item in array has object pairs for title, choices, correct answer
 * for loop to cycle through questions
 * conditional within for loop to validate submission of an answer
 * conditional within loop to check if answer is correct
@@ -35,12 +35,13 @@ THEN I am presented with another question
 
 WHEN I answer a question incorrectly
 THEN time is subtracted from the clock
-* conditional within setInterval()
+* conditional (within button/event listener to answer questions)... setInterval()
 
 
 WHEN all questions are answered or the timer reaches 0
 THEN the game is over
-* conditional within clearInterval()
+* game over function to be called with clear interval/button handler
+
 
 
 WHEN the game is over

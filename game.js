@@ -6,8 +6,11 @@ var answer1El = document.getElementById("answer1");
 var answer2El = document.getElementById("answer2");
 var answer3El = document.getElementById("answer3");
 var answer4El = document.getElementById("answer4");
+var finishEl = document.getElementById("finish");
+var finalScoreEl = document.getElementById("final-score");
 
 var i = 0;
+var timeLeft = 20;
 
 startEl.addEventListener("click", function() {
     quizTimer();
@@ -16,8 +19,7 @@ startEl.addEventListener("click", function() {
 })
 
 function quizTimer() {
-    var timeLeft = 10;
-  
+    
     var timeInterval = setInterval(function() {
       timerEl.textContent = timeLeft + " seconds remaining";
       timeLeft--;
@@ -45,7 +47,7 @@ function quizTimer() {
 
 function askQuestions () {
     questionsEl.setAttribute("style", "display: auto");
-    displayQuestion(questionArray[0]);
+    displayQuestion(questionArray[i]);
 }
 
 function displayQuestion (question) {
@@ -56,18 +58,45 @@ function displayQuestion (question) {
     answer4El.textContent = question["choices"][3];
 }
 
+var score = 0
+
 function answerChoice (userChoice) {
-//decide if correct
+//console.log(userChoice);
+  //decide if correct
 //store if correct
 //time off timer if incorrect
+  var question = questionArray[i];
+  //console.log(question["choices"][userChoice]);
+  // console.log(question["answer"]);
+  if (question["choices"][userChoice] == question["answer"]) {
+    score++;
+    console.log(score);
+  } else {
+    timeLeft = timeLeft - 3;
+  }
 //move to next question- i++
 //display next question
+  i++;
+  if (questionArray[i] == undefined) {
+    questionsEl.setAttribute("style", "display: none");
+    finishEl.setAttribute("style", "display: auto");
+    finalScoreEl.textContent = "Your final score is " + score;
+  } else {
+    displayQuestion(questionArray[i]);
+  }
 //decide if done
+  
 }
 
 answer1El.addEventListener("click", function() {
-    answerChoice(0);
+  answerChoice(0);
 });
-answer2El.addEventListener("click", function() {});
-answer3El.addEventListener("click", function() {});
-answer4El.addEventListener("click", function() {});
+answer2El.addEventListener("click", function() {
+  answerChoice(1);
+});
+answer3El.addEventListener("click", function() {
+  answerChoice(2);
+});
+answer4El.addEventListener("click", function() {
+  answerChoice(3);
+});
