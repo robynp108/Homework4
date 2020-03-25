@@ -31,7 +31,7 @@ function quizTimer() {
       questionsEl.setAttribute("style", "display: none");
       finishEl.setAttribute("style", "display: auto");
       clearInterval(timeInterval);
-    } else if (timeLeft === 0) {
+    } else if (timeLeft <= 0) {
       questionsEl.setAttribute("style", "display: none");
       finishEl.setAttribute("style", "display: auto");
       clearInterval(timeInterval);
@@ -87,13 +87,16 @@ function answerChoice(userChoice) {
 
   if (question["choices"][userChoice] == question["answer"]) {
     score++;
-    console.log(score);
   } else {
     timeLeft = timeLeft - 3;
   }
 
   i++;
   if (questionArray[i] == undefined) {
+    questionsEl.setAttribute("style", "display: none");
+    finishEl.setAttribute("style", "display: auto");
+    finalScoreEl.textContent = "Your final score is " + score;
+  } else if (timeLeft <= 0) {
     questionsEl.setAttribute("style", "display: none");
     finishEl.setAttribute("style", "display: auto");
     finalScoreEl.textContent = "Your final score is " + score;
