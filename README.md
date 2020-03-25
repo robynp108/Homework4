@@ -65,7 +65,8 @@ This application is a timed coding quiz.  When the start button is pushed, the u
 
 ## URL of Deployed Application
 
-[Coding Quiz](https://robynp108.github.io/Homework4/)
+https://robynp108.github.io/Homework4/
+
 
 ## Screenshots of Start Page and High Score Page
 
