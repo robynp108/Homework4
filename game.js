@@ -10,7 +10,7 @@ var finishEl = document.getElementById("finish");
 var finalScoreEl = document.getElementById("final-score");
 
 var i = 0;
-var timeLeft = 20;
+var timeLeft = 10;
 
 startEl.addEventListener("click", function() {
     quizTimer();
@@ -22,26 +22,41 @@ function quizTimer() {
     
     var timeInterval = setInterval(function() {
       timerEl.textContent = timeLeft + " seconds remaining";
-      timeLeft--;
-  
-      if (timeLeft === 0) {
-        timerEl.textContent = "Time's Out!";
+     
+      if (questionArray[i] == undefined) {
+        questionsEl.setAttribute("style", "display: none");
+        finishEl.setAttribute("style", "display: auto");
         clearInterval(timeInterval);
-      }
+      } else if (timeLeft === 0) {
+        questionsEl.setAttribute("style", "display: none");
+        finishEl.setAttribute("style", "display: auto");
+        clearInterval(timeInterval);
+      } else {timeLeft--;}
   
     }, 1000);
   }
 
   var questionArray = [
 	{
-		title: "Which of these is not an animal?",
-		choices: ["cat", "dog", "bird", "tree"],
-		answer: "tree"
+		title: "Which of these is not a programming language?",
+		choices: ["HTML", "CSS", "jQuery", "JavaScript"],
+		answer: "jQuery"
 	},
 	{
-		title: "Which of these is a State?",
-		choices: ["Guam", "Kansas", "American Samoa", "Puerto Rico"],
-		answer: "Kansas"
+		title: "What will console.log(\"2\" + \"5\") return?",
+		choices: ["7", "10", "null", "25"],
+		answer: "25"
+  },
+  {
+		title: "What does the .push() method do?",
+    choices: ["push element to end of line", "push element to end of page", 
+    "append data to local storage", "append item to an array"],
+		answer: "append item to an array"
+  },
+  {
+		title: "Which of these operators means 'or'?",
+		choices: ["^^", "||", "!!", "&&"],
+		answer: "||"
 	}
 ]
 
@@ -100,3 +115,25 @@ answer3El.addEventListener("click", function() {
 answer4El.addEventListener("click", function() {
   answerChoice(3);
 });
+
+//event handler for submit button
+var submitButton = document.getElementById("button-addon2");
+
+submitButton.addEventListener("click", function() {
+    //access value of input field
+    var initialsEl = document.getElementById("user-initials");
+    
+    var highScoreEntry = initialsEl.value + " - " + score;
+    //console.log(highScoreEntry);
+    var highScores;
+
+    if (localStorage.getItem("highScores") === null) {
+      highScores = [];
+    } else {
+      highScores = JSON.parse(localStorage.getItem("highScores"));
+    }
+    
+    highScores.push(highScoreEntry);
+
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+})

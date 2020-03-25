@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                <a href="./highscore.html">View Highscores</a>
+                <a href="highscore.html">View Highscores</a>
                 </div>
                 <div class="col-md-6">
                 <span id="timer" style="float: right;">Timer</span>
@@ -67,7 +67,7 @@
                           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                           <p class="card-text" id="final-score">Your final score is </p>
                           <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Player's initials" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <input type="text" id="user-initials" class="form-control" placeholder="Player's initials" aria-label="Recipient's username" aria-describedby="button-addon2">
                             <div class="input-group-append">
                               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
                             </div>
@@ -78,10 +78,27 @@
             </div>
         </div>
     </section> 
+    <!-- <section id="high-scores" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">High Scores</h5>
+                          <ul id="score-list">
+                          </ul>
+                          <a href="./index.html" class="card-link">Back To Quiz</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        
+    </section> -->
 
-    <script src="./game.js"></script>
-    <script src="./score.js"></script>
-    <script src="./questions.js"></script>
+    <script src="game.js"></script>
+    <!-- <script src="score.js"></script> -->
+    <script src="questions.js"></script>
     
 </body>
 </html>
