@@ -1,8 +1,6 @@
 # Homework4
 # 04 Web APIs: Code Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
-
 ## User Story
 
 ```
@@ -10,7 +8,9 @@ AS A coding bootcamp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 ```
+## Description
 
+<<<<<<< HEAD
 ## Acceptance Criteria
 
 ```
@@ -47,21 +47,30 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
+=======
+This application is a timed coding quiz.  When the start button is pushed, the user has fifteen second to answer four questions about coding. One point is given for each correct answer.  If a question is answered incorrectly, three seconds are deducted from the remaining time.  When either the questions are finished or the time passes zero, the quiz stops and the final score is given.  The scores with user initials can then be stored on the high scores page.
+>>>>>>> a87c22935ad56e53e6cdd3d747187017506d4675
 
+## Completed
 
 ```
+* A start page presents instructions, timer, a link to high scores page, and start button
+* The start button presents questions card with answer buttons.  
+* Button click triggers next question.
+* Correct answers add points to score, incorrect ones deduct time from timer.
+* Game end conditions are either questions finished or time passes zero.
+* Option given to save score with initials. 
+* Scores can be viewed on separate page with link to return to quiz.
 
-The following animation demonstrates the application functionality:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+## URL of Deployed Application
 
-### Review
+[Coding Quiz](https://robynp108.github.io/Homework4/)
 
-You are required to submit the following for review:
+## Screenshots of Start Page and High Score Page
 
-* The URL of the functional, deployed application.
+![start](CodingQuizScreenshot.png)
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+![high score](HighScoresScreenshot.png)
+```
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
